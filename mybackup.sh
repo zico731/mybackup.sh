@@ -1,11 +1,12 @@
 #!/bin/bash
 
-#./02-backup-enhanced.sh   
+#./mybackup.sh   
 #
 # Auteur : zico731
 # Date : Octobre 2022
 #
-# PREREQUIS monter le lecteur au préalable : mount -t drvfs f: /mnt/f
+# PREREQUIS pour wsl :	* monter le lecteur au préalable : mount -t drvfs f: /mnt/f
+#			* transformer chemin de windows en linux avec : echo C:/path/of/windows/ |sed -e 's|\\|/|g' -e  's|C:|/mnt/c|'
 
 
 # Variables globales
@@ -40,11 +41,6 @@ echo "       Script de sauvegarde - Sauvegarde sur la machine $HOSTNAME "
 echo "  ****************************************************************"  
 echo
 echo "  La sauvegarde sera faîte dans le dossier ${DESTINATION}." 
-# echo "  Création du répertoire..."  
-# mkdir -p $DESTINATION/$rep
-# echo "                                                        [ OK ]"  
-#echo "  La sauvegarde de ${REPERTOIRE1//*\/}, ${REPERTOIRE2//*\/}, ${REPERTOIRE3//*\/} vers $(basename ${DESTINATION}) va commencer :"  
-#echo "  La synchronisation de $(echo ${SOURCES[*]//*\/}| sed 's/ /, /g') commence:"
 printf "  La synchronisation de "; for i in  $(seq 0 $((NB_ITEMS-1))); do echo -n "${SOURCES[$i]//*\/}, "; done | sed 's/..$/ commence:/'
 echo
 
