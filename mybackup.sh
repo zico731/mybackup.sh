@@ -48,7 +48,6 @@ echo
 for i in ${!SOURCES[*]}
 do 
 	echo "  ($((i+1))/${NB_ITEMS}) - ${SOURCES[i]//*\/} ..."
-	#rsync -a --delete "${SOURCES[i]}" "${DESTINATION}" |tee -a /var/log/mybackup.log 2>>/var/log/mybackup.err
 	rsync -a --delete "${SOURCES[i]}" "${DESTINATION}" >> /var/log/mybackup.log 2>>/var/log/mybackup.err
 	
 done
