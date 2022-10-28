@@ -6,7 +6,7 @@
 # Date : Octobre 2022
 #
 # PREREQUIS pour wsl :	* monter le lecteur au préalable : mount -t drvfs f: /mnt/f
-#			* transformer chemin de windows en linux avec : echo C:/path/of/windows/ |sed -e 's|\\|/|g' -e  's|C:|/mnt/c|'
+#			* transformer chemin de windows en linux avec : echo 'C:/path/of/windows/' |sed -e 's|\\|/|g' -e  's|C:|/mnt/c|'
 
 
 # Variables globales
